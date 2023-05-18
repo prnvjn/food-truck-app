@@ -1,0 +1,77 @@
+
+#root {
+  margin: 0 auto;
+  background: #a5b4fc;
+  width: 1280px;
+    box-sizing: border-box;
+
+  min-height: 100vh;
+}
+
+.container{
+  box-sizing: border-box;
+ width: 100%;
+margin: 0 auto;
+padding: 0 2rem;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.pincode{
+  display:flex ;
+  gap: 1rem;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+button{
+  background: #4c1d95;
+}
+
+@media only screen and (max-width: 640px) {
+  /* CSS rules for small screens */
+  .container{
+    max-width: 640px;
+   }
+}
+
+/* Styles for medium screens (601px to 1024px) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* CSS rules for medium screens */
+  .container{
+    max-width: 1024px;   
+   }
+}
+
+/* Styles for large screens (1025px and above) */
+@media only screen and (min-width: 1025px) {
+  /* CSS rules for large screens */
+  .container{
+    max-width: 1280px;
+   
+   
+   }
+}
