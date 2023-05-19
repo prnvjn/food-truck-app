@@ -7,13 +7,14 @@ import axios from 'axios'
 
 import { Map } from './components/Map'
 
+
 function App() {
   let x =latLng(37.7749, -122.4194)
 const [inputVal,setInputVal]=useState("")
 const [postalCode,setPostalCode]=useState("")
-  const [fetchedData, setFetchedData] = useState(data)
+  const [fetchedData, setFetchedData] = useState([])
   const [userCords,setUserCords] = useState(x)
-
+  const key = import.meta.env.VITE_TOKEN
 
 
 
@@ -21,26 +22,26 @@ const [postalCode,setPostalCode]=useState("")
 
 
 // fetch data from dataset 
-//   useEffect(()=>{
-//     const getData = async()=>{
-//       try{
-//         const data = await axios.get("https://data.sfgov.org/resource/rqzj-sfat.json",{
-//           params:{
-//             $$app_token : 'MvByKrRetmvPljPgTXGMMTSgK',
-//             status: 'APPROVED'
-//           }
+  useEffect(()=>{
+    const getData = async()=>{
+      try{
+        const data = await axios.get("https://data.sfgov.org/resource/rqzj-sfat.json",{
+          params:{
+            $$app_token :key,
+            status: 'APPROVED'
+          }
 
-//         })
-// setFetchedData(data.data)
-//       }catch(error){
-//         console.log(error)
-//       }
+        })
+setFetchedData(data.data)
+      }catch(error){
+        console.log(error)
+      }
         
-//     }
+    }
 
-// getData()
+getData()
 
-//   },[])
+  },[])
 
 
 
