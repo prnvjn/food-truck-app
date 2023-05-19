@@ -82,6 +82,12 @@
   border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+@media only screen and (max-width: 640px) {
+	/* CSS rules for small screens */
+	.leaflet-container{
+		aspect-ratio: 1/1.5;
+	 }
+  }
 .leaflet-container a {
 	-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
 }
@@ -483,6 +489,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	padding: 1px;
 	text-align: left;
 	border-radius: 12px;
+	
 	}
 .leaflet-popup-content {
 	margin: 13px 24px 13px 20px;
@@ -520,8 +527,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-	background: white;
-	color: #333;
+	background-color: #a5b4fc;
+	color: #f8fafc;
+	font-weight: 800;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 	}
 .leaflet-container a.leaflet-popup-close-button {
@@ -533,7 +541,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	width: 24px;
 	height: 24px;
 	font: 16px/24px Tahoma, Verdana, sans-serif;
-	color: #757575;
+	color: #f8fafc;
+	font-weight: 900;
 	text-decoration: none;
 	background: transparent;
 	}

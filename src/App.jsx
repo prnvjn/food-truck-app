@@ -110,7 +110,7 @@ useEffect(()=>{
 
 
    
-
+<h3>Total number of Food trucks with approved permit: {fetchedData.length} </h3>
 
 <Map userCords={userCords} fetchedData={fetchedData}/>
     </div>

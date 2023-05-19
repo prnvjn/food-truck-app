@@ -3,14 +3,16 @@
 import React from 'react'
 import {Marker,Popup} from 'react-leaflet'
 import L,{latLng, distanceTo} from 'leaflet'
+import { TruckInfo } from './TruckInfo'
 
 export const TruckLocation = ({markerData,user,key}) => {
 let lat = Number(markerData.latitude)
 let lng = Number(markerData.longitude)
 let truckName = markerData.applicant
+let locationDescription = markerData.locationdescription
 let truckCoords = latLng(lat,lng)
 let distance = user.distanceTo(truckCoords)
-
+let foodItems = markerData.fooditems.split(/[:;]/)
 const svgIcon = L.divIcon({
   html: `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#818cf8" stroke="#fef2f2" class="w-6 h-6">
@@ -31,7 +33,8 @@ const svgIcon = L.divIcon({
         {distance<=3218.69?
         <Marker position={[lat,lng]} icon={svgIcon} >
     <Popup>
-      {truckName}
+  
+      <TruckInfo name={truckName} addr={locationDescription} menu={foodItems}/>
     </Popup>
   </Marker>:null}
 
