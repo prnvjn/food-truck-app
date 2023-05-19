@@ -6,8 +6,8 @@ import { TruckLocation } from './TruckLocation'
 export const Map = ({userCords,fetchedData}) => {
 
 const icon = L.icon({
-  iconUrl:'../../public/marker-icon.png',
-  shadowUrl:"../../public/marker-shadow.png",
+  iconUrl:'/marker-icon.png',
+ 
   // iconSize:     [25, 95], // size of the icon
   shadowSize:   [50, 64], // size of the shadow
   // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
