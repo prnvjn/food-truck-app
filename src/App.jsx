@@ -33,6 +33,7 @@ const [postalCode,setPostalCode]=useState("")
 
         })
 setFetchedData(data.data)
+console.log("data fetched")
       }catch(error){
         console.log(error)
       }
@@ -83,14 +84,25 @@ useEffect(()=>{
       <div className='inputs'>
         <div className='pincode'>
         <input type="text" pattern="[0-9]*" placeholder='Enter a Pincode xxxxx' onChange={(e)=>{setInputVal(e.target.value)}} value={inputVal}/> 
+        
       <button onClick={()=>{setPostalCode(inputVal)
-      setInputVal("")
-      }} >Submit</button>
-        </div>
-      
-      test
-      94111
 
+      setInputVal("")
+      }} >Submit</button> 
+
+        </div>
+  
+      <select name="options" id="options" onChange={(e)=>setPostalCode(e.target.value
+      
+      )}> <option disabled selected
+      >select a pincode</option>
+      
+      <option  value="94102">94102</option>
+      <option value="94103">94103</option>
+      <option value="94111">94111</option>
+      <option value="94114">94114</option>
+      <option value="94112">94115</option> 
+      </select>
 
      <button onClick={getUserLocation}>Get Your location</button>
 
@@ -98,7 +110,6 @@ useEffect(()=>{
 
 
    
-
 
 
 <Map userCords={userCords} fetchedData={fetchedData}/>
