@@ -1,8 +1,25 @@
 /* eslint-disable react/prop-types */
 import { MapContainer, TileLayer, Marker,Popup,Circle } from 'react-leaflet'
+import L from 'leaflet'
 import Recenter from "./Recenter"
 import { TruckLocation } from './TruckLocation'
 export const Map = ({userCords,fetchedData}) => {
+
+const icon = L.icon({
+  iconUrl:'../../public/marker-icon.png',
+  shadowUrl:"../../public/marker-shadow.png",
+  // iconSize:     [25, 95], // size of the icon
+  shadowSize:   [50, 64], // size of the shadow
+  // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -46], // point from which the popup should open relative to the iconAnchor
+  iconSize: [30, 40],
+  iconAnchor: [12, 40],
+})
+
+
+
+
   return (
     <div className='map' >
 
@@ -20,7 +37,8 @@ export const Map = ({userCords,fetchedData}) => {
     
     {fetchedData.map((truck)=><TruckLocation markerData={truck} user={userCords} key={truck.id}/>
     )}
-<Marker position={[userCords.lat,userCords.lng] } zIndexOffset={100}>
+
+<Marker position={[userCords.lat,userCords.lng] }  zIndexOffset={100} icon={icon}> 
       <Popup>
         User
       </Popup>
