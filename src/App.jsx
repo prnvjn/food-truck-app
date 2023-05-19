@@ -80,7 +80,7 @@ useEffect(()=>{
   
   return (
     <div className='container' >
-      <h1>Find Food Trucks in 🌁</h1>
+      <h1>🌁 Find Food Trucks</h1>
       <div className='inputs'>
         <div className='pincode'>
         <input type="text" pattern="[0-9]*" placeholder='Enter a Pincode xxxxx' onChange={(e)=>{setInputVal(e.target.value)}} value={inputVal}/> 
